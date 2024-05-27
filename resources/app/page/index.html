@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Программы для ПК</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="icon" type="image/x-icon" href="/img/icon.ico" />
+	</head>
+	<body>
+		<main>
+			<h1>Полезные источники</h1>
+			<section class="section-home__page">
+				<nav>
+					<a href="./programs.html"><button>Программы</button></a>
+					<button id="error" onclick="error()">Ссылки</button>
+				</nav>
+			</section>
+		</main>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script>
+			function show(category) {
+				$('.ctgr').hide()
+
+				$('.ctgr.' + category)
+					.show()
+					.css('opacity', '0')
+					.animate({ opacity: 1 }, 300)
+
+				$('.ctgr')
+					.not('.' + category)
+					.animate({ opacity: 0 }, 300, function () {
+						$(this).hide()
+					})
+			}
+			function error() {
+				window.location.href = 'index.html'
+				alert('На данный момент эта страница недоступна')
+			}
+			require('../render.js')
+		</script>
+	</body>
+</html>

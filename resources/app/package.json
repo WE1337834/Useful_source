@@ -1,0 +1,28 @@
+{
+	"name": "Useful_source",
+	"version": "0.0.2",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"build": "electron-packager ."
+	},
+	"author": "",
+	"build": {
+		"win": {
+			"icon": "./img/icon.ico"
+		}
+	},
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"electron": "^30.0.6",
+		"express": "^4.19.2",
+		"jquery": "^3.7.1",
+		"mysql": "^2.18.1",
+		"nodemon": "^3.1.0"
+	},
+	"devDependencies": {
+		"electron-builder": "^24.13.3",
+		"electron-packager": "^17.1.2"
+	}
+}

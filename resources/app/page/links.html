@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Программы для ПК</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="icon" type="image/x-icon" href="/img/icon.ico" />
+	</head>
+	<body>
+		<main>
+			<nav class="nav-come__back">
+				<a href="./index.html"><button class="come__back">&#8249;</button></a>
+			</nav>
+			<h1>Ссылки</h1>
+			<section>
+				<aside>
+					<ul>
+						<button onclick="show('games')">Игры</button>
+
+						<button onclick="show('messanger')">Мессенджеры и соц. сети</button>
+
+						<button onclick="show('it')">IT</button>
+
+						<button onclick="show('win10')">
+							Установка/активации Windows 10
+						</button>
+
+						<button onclick="show('other')">Прочее</button>
+					</ul>
+				</aside>
+
+				<ul></ul>
+			</section>
+		</main>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script>
+			function show(category) {
+				$('.ctgr').hide()
+
+				$('.ctgr.' + category)
+					.show()
+					.css('opacity', '0')
+					.animate({ opacity: 1 }, 300)
+
+				$('.ctgr')
+					.not('.' + category)
+					.animate({ opacity: 0 }, 300, function () {
+						$(this).hide()
+					})
+			}
+
+			require('../render.js')
+		</script>
+	</body>
+</html>
